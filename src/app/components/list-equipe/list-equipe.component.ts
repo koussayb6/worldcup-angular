@@ -14,6 +14,7 @@ export class ListEquipeComponent implements OnInit {
   loggedIn:boolean=false;
   showEdit:boolean=false;
   equipe:Equipe;
+  index:any;
 
   constructor(private equipeService: EquipeService, private tokenStorage: TokenStorageService) {
   }
@@ -49,26 +50,30 @@ export class ListEquipeComponent implements OnInit {
 
 
 
-  delete(equipe:Equipe){
+  delete(equipeId:any){
     var result=confirm("sure?");
     if(result){
       //this.invoices.splice(index);
-      this.equipeService.deleteEquipek(equipe).subscribe(
-        () => this.equipes = this.equipes.filter(e => e.equipeid != equipe.equipeid),
+      this.equipeService.deleteEquipek(equipeId).subscribe(
+        () => this.equipes = this.equipes.filter(e => e.equipeid != equipeId),
       );}
   }
 
 
-  update(equipe:any){
+  update(equipe:any, i:any){
     this.showEdit=true;
     this.equipe=equipe;
+    this.index=i;
 
   }
   updateEquipe(equipe:any){
     let close=document.getElementById("close");
     close?.click();
     equipe.equipeid=this.equipe.equipeid;
-    this.equipeService.updateEquipe(equipe).subscribe();
+    this.equipeService.updateEquipe(equipe).subscribe((result)=>
+    { this.equipes[this.index]=result.object;
+
+    });
 
     this.showEdit=false;
   }

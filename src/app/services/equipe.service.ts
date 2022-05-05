@@ -8,16 +8,12 @@ import {Equipe} from "../models/Equipe";
   providedIn: 'root'
 })
 export class EquipeService {
-   httpOptions = {
-    headers: new HttpHeaders({
-      Authorization: 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJrb3Vzc2F5IiwiaWF0IjoxNjUxNTczMjM3LCJleHAiOjE2NTI4NjkyMzd9.oCEmAefi4Hn_AYZBFLbRPbSHz1CgrqlAOR6eLctsVtZhjuSWJu8F5k02oQTtolXT_eAoyD75M9Z9HEPNG2zMDQ'
-    })
-  };
+
   baseurl=environment.api_uri+'equipe/';
   constructor(private http:HttpClient) { }
 
   getAll():Observable<Equipe[]>{
-    return this.http.get<Equipe[]>(this.baseurl, this.httpOptions);
+    return this.http.get<Equipe[]>(this.baseurl);
   }
 
   getOneById(id:any):Observable<Equipe>{
@@ -36,6 +32,6 @@ export class EquipeService {
   }
 
   updateEquipe(equipe:any){
-    return this.http.put(this.baseurl, equipe )
+    return this.http.put<any>(this.baseurl, equipe )
   }
 }
