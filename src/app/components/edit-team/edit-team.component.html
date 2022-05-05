@@ -1,0 +1,19 @@
+
+<div class="modal-body">
+  <form #f="ngForm" id="addStock">
+
+    <div class="form-group">
+      <label for="codeFournisseur">codeFournisseur</label>
+      <input type="text" class="form-control" id="codeFournisseur"  name="nom" ngModel [(ngModel)]="equipe.nom">
+    </div>
+    <div class="form-group">
+      <label for="libelleFournisseur">libelle Fournisseur</label>
+      <input type="text" class="form-control" id="libelleFournisseur"  name="surnom" ngModel [(ngModel)]="equipe.surnom">
+    </div>
+
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  <input type="submit" value="save" class="btn btn-primary" form="addStock" (click)="sendDataToParent(f.value)">
+</div>

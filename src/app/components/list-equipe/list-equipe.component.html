@@ -1,0 +1,87 @@
+<!-- Breadcrumbs Section Start -->
+<div class="rs-breadcrumbs">
+  <div class="breadcrumbs-wrap">
+    <img src="../assets/images/breadcrumbs/inner16.jpg" alt="Breadcrumbs Image">
+    <div class="breadcrumbs-inner">
+      <div class="container">
+        <div class="breadcrumbs-text inner-team">
+          <h1 class="breadcrumbs-title mb-17">Teams</h1>
+          <div class="categories">
+            <ul>
+              <li><a href="index-2.html">Home</a></li>
+              <li class="active">Teams</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Breadcrumbs Section End -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" id="close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <app-edit-team *ngIf="showEdit; else elseblock" [equipe]="equipe" (notif)="updateEquipe($event)"></app-edit-team>
+      <ng-template #elseblock>
+        <app-edit-team  (notif)="addEquipe($event)"></app-edit-team>
+      </ng-template>
+    </div>
+  </div>
+</div>
+
+<div class="rs-pointtable full-ranking pt-100 md-pt-70">
+  <div class="container custom">
+    <input type="submit" value="Add team" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModal" *ngIf="loggedIn">
+
+    <table class="ranking-wrap">
+      <tbody>
+      <tr>
+        <th class="team">Team</th>
+        <th>Surname</th>
+        <th>Global ranking</th>
+      </tr>
+      <tr *ngFor="let equipe of equipes">
+        <td>
+          <div class="club-item">
+            <a [routerLink]="['/equipe',equipe.equipeid]">
+              <img src="./assets/images/team-logo/9.png" alt="Image">
+              {{equipe.nom}}
+            </a>
+          </div>
+        </td>
+        <td>{{equipe.surnom}}</td>
+        <td>{{equipe.classementmondial}}</td>
+      </tr>
+
+      </tbody>
+    </table>
+
+    <!-- Subscribe Section Start -->
+    <div class="rs-subscribe bg7">
+      <form class="subscribe-form">
+        <div class="row rs-vertical-middle">
+          <div class="col-lg-6 col-md-12 md-mb-30">
+            <div class="title-part">
+              <h2 class="title white-color"> Subscribe Our Newsletter</h2>
+              <p class="desc margin-0 white-color"> Subscribe to our newsletter for getting regular updates.</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <div class="subscribe-form-fields">
+              <input type="submit" class="news-submit" value="Subscribe">
+              <input type="email" class="news-email" name="EMAIL" placeholder="EMAIL ADDRESS" required="">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- Subscribe Section End -->
+  </div>
+</div>
+
