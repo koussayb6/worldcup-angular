@@ -1,5 +1,5 @@
 export class Joueur {
-  id: number;
+  joueurid: number;
   fifajoueurid: number;
   prenom: string;
   nom: string;

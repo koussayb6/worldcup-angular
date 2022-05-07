@@ -19,7 +19,7 @@
     <div class="row pt-100 md-pt-80">
       <div class="col-lg-3 col-md-12 md-mb-30">
         <div class="club-logo text-center">
-          <img src="./assets/images/team-logo/7.png" alt="Arsenal">
+          <img src="./assets/images/team-logo/Logo_federation_tunisienne_de_football.png" alt="Arsenal">
         </div>
       </div>
       <div class="col-lg-9 col-md-12">
@@ -98,55 +98,40 @@
           <div class="tab-pane fade show active" id="club-history">
             <div class="about-club">
               <p><img class="alignright" src="images/about/club-details.jpg" alt="">
-                It is a long established fact that a reader will It is a long established fact that a reader will be
-                distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum
-                is that it has a more-or-less normal distribution of letters, as opposed to using ‘Content here, content
-                here’, making it look like readable English. Many desktop publishing packages and web page editors now
-                use Lorem Ipsum as their default model text, and a search for ‘lorem ipsum’ will uncover many web sites
-                still in their infancy. Many desktop publishing packages and web page editors now use Lorem Ipsum as
-                their default model text, and a search for ‘lorem ipsum their infancy.</p>
-              <p class="margin-0">If you are going to use a passage of Lorem Ipsum, you need to be sure there isn’t
-                anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend
-                to repeat predefined Internet tend to repeat predefined chunks as necessary, making this the first true
-                generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of
-                model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is
-                therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+                L'équipe de Tunisie de football (arabe : منتخب تونس لكرة القدم) est l'équipe nationale qui représente
+                la Tunisie dans le football international masculin, depuis qu'elle a disputé son premier match
+                le 2 juin 1957 contre la Libye. Membre depuis 1960 de la FIFA au niveau international
+                et de la Confédération africaine de football au niveau continental, ainsi que de l'UAFA depuis 1978
+                et de l'UNAF depuis 2005, elle est supervisée par la Fédération tunisienne de football, fondée
+                le 29 mars 1957, après l'indépendance de la Tunisie.</p>
+
             </div>
           </div>
+
           <div class="tab-pane fade" id="squad-list">
+            <input type="submit" value="Add new player" class="btn btn-primary mb-2" data-toggle="modal" data-target="#exampleModal" *ngIf="loggedIn">
             <div class="squad-list rs-team style3">
               <div class="row">
-                <div *ngFor="let joueur of equipe.joueurs" class="col-xl-3 col-lg-4 col-md-6 lg-mb-30">
-                  <div class="squad-list-item">
-                    <a href="team-single.html">
-                      <img src="./assets/images/team/3.jpg" alt="">
-                    </a>
-                    <div class="name">
-                      <a href="team-single.html">{{joueur.nom}}</a>
-                    </div>
-                    <div class="position">Defender</div>
-                    <div class="jersy">11</div>
-                  </div>
-                </div>
-                <div class="col-xl-3 col-lg-4 col-md-6 lg-mb-30">
 
+                <div *ngFor="let joueur of equipe.joueurs" class="col-xl-3 col-lg-4 col-md-6 lg-mb-30">
                 <div class="single-team">
                   <div class="team-img">
                     <a href="#"><img src="./assets/images/team/1.jpg" alt=""></a>
-                    <div class="team-social">
+                    <div class="team-social" >
                       <a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
                       <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
-                      <button class="btn bg-transparent"><i class="fa fa-edit"></i></button>
-
+                      <button class="btn bg-transparent" *ngIf="loggedIn"  ><i class="fa fa-edit"></i></button>
                     </div>
                   </div>
                   <div class="team-item-text">
                     <div class="team-details">
                       <h3 class="team-name">
-                        <a href="#">Semus Jemkro</a>
+                        <a [routerLink]="['/joueur',joueur.joueurid,idEquipe]">{{joueur.nom}}</a>
                       </h3>
-                      <span class="team-title">Forward</span>
+                      <span class="team-title">{{joueur.poste}}</span>
+                      <div class="jersy">{{joueur.nummaillot}}</div>
                     </div>
+
                   </div>
                 </div>
                 </div>
@@ -393,3 +378,21 @@
   </div>
 </div>
 <!-- Single Club Section End -->
+
+<!--addjoueurform-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Add new player</h5>
+        <button type="button" id="close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+        <app-edit-joueur  (notif)="addJoueur($event)"></app-edit-joueur>
+
+    </div>
+  </div>
+</div>
+<!--addjoueurform-->

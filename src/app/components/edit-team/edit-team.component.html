@@ -3,13 +3,26 @@
   <form #f="ngForm" id="addStock">
 
     <div class="form-group">
-      <label for="codeFournisseur">codeFournisseur</label>
-      <input type="text" class="form-control" id="codeFournisseur"  name="nom" ngModel [(ngModel)]="equipe.nom">
+      <label for="nom">Team name</label>
+      <input type="text" class="form-control" id="nom"  name="nom" ngModel [(ngModel)]="equipe.nom">
     </div>
     <div class="form-group">
-      <label for="libelleFournisseur">libelle Fournisseur</label>
-      <input type="text" class="form-control" id="libelleFournisseur"  name="surnom" ngModel [(ngModel)]="equipe.surnom">
+      <label for="surnom">Team nickname</label>
+      <input type="text" class="form-control" id="surnom"  name="surnom" ngModel [(ngModel)]="equipe.surnom">
     </div>
+    <div class="form-group">
+      <label for="confederation">Confederation</label>
+      <input type="text" class="form-control" id="confederation"  name="confederation" ngModel [(ngModel)]="equipe.confederation">
+    </div>
+    <div class="form-group">
+      <label for="couleurs">Team colors</label>
+      <input type="text" class="form-control" id="couleurs"  name="couleurs" ngModel [(ngModel)]="equipe.couleurs">
+    </div>
+    <div class="form-group">
+      <label for="stadeprincipal">Main stadium</label>
+      <input type="text" class="form-control" id="stadeprincipal"  name="stadeprincipal" ngModel [(ngModel)]="equipe.stadeprincipal">
+    </div>
+
 
   </form>
 </div>

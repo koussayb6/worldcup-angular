@@ -11,6 +11,9 @@ import {FormsModule} from "@angular/forms";
 import {authInterceptorProviders} from "./_helpers/auth.interceptor";
 import { LoginComponent } from './components/login/login.component';
 import { EditTeamComponent } from './components/edit-team/edit-team.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { EditJoueurComponent } from './components/edit-joueur/edit-joueur.component';
+import { JoueurComponent } from './components/joueur/joueur.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +23,9 @@ import { EditTeamComponent } from './components/edit-team/edit-team.component';
     EquipeComponent,
     LoginComponent,
     EditTeamComponent,
+    ProfileComponent,
+    EditJoueurComponent,
+    JoueurComponent,
   ],
   imports: [
     BrowserModule,

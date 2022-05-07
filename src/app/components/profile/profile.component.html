@@ -1,0 +1,41 @@
+<!-- Breadcrumbs Section Start -->
+<div class="rs-breadcrumbs">
+  <div class="breadcrumbs-wrap">
+    <img src="../assets/images/breadcrumbs/inner16.jpg" alt="Breadcrumbs Image">
+    <div class="breadcrumbs-inner">
+      <div class="container">
+        <div class="breadcrumbs-text inner-team">
+          <h1 class="breadcrumbs-title mb-17">Profile</h1>
+          <div class="categories">
+            <ul>
+              <li><a href="index-2.html">Home</a></li>
+              <li class="active">Profile</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Breadcrumbs Section End -->
+<div class="container" *ngIf="currentUser; else loggedOut">
+  <header class="jumbotron">
+    <h3>
+      <strong>{{ currentUser.username }}</strong> Profile
+    </h3>
+  </header>
+
+  <p>
+    <strong>Email:</strong>
+    {{ currentUser.email }}
+  </p>
+  <strong>Roles:</strong>
+  <ul>
+    <li *ngFor="let role of currentUser.roles">
+      {{ role }}
+    </li>
+  </ul>
+</div>
+<ng-template #loggedOut>
+  Please login.
+</ng-template>

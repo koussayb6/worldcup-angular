@@ -19,7 +19,7 @@
         <div class="row rs-vertical-middle">
           <div class="col-lg-2">
             <div class="logo-area">
-              <a href="index-2.html"><img src="../assets/images/logo.png" alt="logo"></a>
+              <a href="index-2.html"><img src="../assets/images/qatarworldcup.png" alt="logo"></a>
             </div>
           </div>
           <div class="col-lg-10 mobile-menu-area">
@@ -143,46 +143,25 @@
                     </li>
                     <!-- Pages Menu End -->
 
-                    <!--Results Menu Start -->
-                    <li><a href="result.html">Results</a></li>
-                    <!--Results Menu End -->
-
-                    <!--Point Table Start-->
-                    <li><a href="point-table.html">Point Table</a></li>
-                    <!--Point Table End-->
-
-                    <!--News Start-->
-                    <li class="menu-item-has-children"><a href="#">News</a>
-                      <ul class="sub-menu">
-                        <li><a href="blog.html">Blog</a></li>
-                        <li class="menu-item-has-children"><a href="#">Blog Grid</a>
-                          <ul class="sub-menu">
-                            <li><a href="blog-2-column.html">Blog 2 Column</a></li>
-                            <li><a href="blog-3-column.html">Blog 3 Column</a></li>
-                            <li class="last-item"><a href="blog-4-column.html">Blog 4 Column</a></li>
-                          </ul>
-                        </li>
-                        <li class="menu-item-has-children"><a href="#">Blog Sidebar</a>
-                          <ul class="sub-menu">
-                            <li><a href="blog-left.html">Blog Left Sidebar</a></li>
-                            <li class="last-item"><a href="blog-right.html">Blog Right Sidebar</a></li>
-                          </ul>
-                        </li>
-                        <li class="menu-item-has-children last-item"><a href="#">Single Post</a>
-                          <ul class="sub-menu">
-                            <li><a href="blog-single-left.html">Post Left Sidebar</a></li>
-                            <li><a href="blog-single-right.html">Post Right Sidebar</a></li>
-                            <li class="last-item"><a href="blog-single.html">Full Width Post</a></li>
-                          </ul>
-                        </li>
-                      </ul>
+                    <!-- Profile -->
+                    <li *ngIf="isLoggedIn">
+                      <a class="nav-link" routerLink="profile">{{ username }}</a>
                     </li>
-                    <!--Point Table End-->
+                    <li *ngIf="isLoggedIn">
+                      <a href (click)="logout()">LogOut</a>
+                    </li>
+                    <li *ngIf="!isLoggedIn">
+                      <a routerLink="login">Login</a>
+                    </li>
+                    <!-- Profile -->
 
                     <!--Contact Menu Start-->
                     <li class="last-item"><a href="contact.html">Contact</a></li>
                     <!--Contact Menu End-->
                   </ul> <!-- //.nav-menu -->
+
+
+
                 </nav>
               </div> <!-- //.main-menu -->
             </div>

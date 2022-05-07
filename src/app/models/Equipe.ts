@@ -6,6 +6,7 @@ export class Equipe {
   nom: string;
   surnom: string;
   classementmondial: number;
+  confederation:string;
   couleurs: string;
   stadeprincipal: string;
   maillotdomicile: string;

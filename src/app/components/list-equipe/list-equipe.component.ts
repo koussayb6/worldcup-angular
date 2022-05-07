@@ -39,7 +39,6 @@ export class ListEquipeComponent implements OnInit {
         console.log(resultat);
         this.equipes.unshift(resultat.object);
 
-        //this.equipes=resultat;
       },
       (error)=>{
         console.log(error.status)
@@ -51,7 +50,7 @@ export class ListEquipeComponent implements OnInit {
 
 
   delete(equipeId:any){
-    var result=confirm("sure?");
+    var result=confirm("Do you really want to delete this team ?");
     if(result){
       //this.invoices.splice(index);
       this.equipeService.deleteEquipek(equipeId).subscribe(
@@ -64,8 +63,8 @@ export class ListEquipeComponent implements OnInit {
     this.showEdit=true;
     this.equipe=equipe;
     this.index=i;
-
   }
+
   updateEquipe(equipe:any){
     let close=document.getElementById("close");
     close?.click();

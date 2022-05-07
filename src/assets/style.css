@@ -1130,7 +1130,7 @@ blockquote i:before {
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul li a:hover,
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul li.active a,
 .full-width-header .rs-header .menu-area .main-menu .rs-menu ul li.current-menu-item > a {
-  color: #fbc02d !important;
+  color: ##900C3F !important;
 }
 .full-width-header .rs-header .menu-area.menu-sticky {
   box-shadow: none;
@@ -6058,7 +6058,7 @@ blockquote i:before {
   background: #313a47;
 }
 /* -------------------------------------
-    37. Error Section CSS 
+    37. Error Section CSS
 --------------------------------------*/
 .rs-page-error {
   background: url(images/404.html);

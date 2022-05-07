@@ -1,0 +1,59 @@
+
+<div class="modal-body">
+  <form #f="ngForm" id="addStock">
+
+    <div class="form-group">
+      <label for="nom">Player first name</label>
+      <input type="text" class="form-control" id="nom"  name="nom" ngModel [(ngModel)]="joueur.nom">
+    </div>
+    <div class="form-group">
+      <label for="prenom">Player last name</label>
+      <input type="text" class="form-control" id="prenom"  name="prenom" ngModel [(ngModel)]="joueur.prenom">
+    </div>
+    <div class="form-group">
+      <label for="fifajoueurid">Fifa player rank</label>
+      <input type="text" class="form-control" id="fifajoueurid"  name="fifajoueurid" ngModel [(ngModel)]="joueur.fifajoueurid">
+    </div>
+    <div class="form-group">
+      <label for="datenaissance">Birth date</label>
+      <input type="text" class="form-control" id="datenaissance"  name="datenaissance" ngModel [(ngModel)]="joueur.datenaissance">
+    </div>
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input type="text" class="form-control" id="age"  name="age" ngModel [(ngModel)]="joueur.age">
+    </div>
+
+    <div class="form-group">
+      <label for="taille">Height</label>
+      <input type="text" class="form-control" id="taille"  name="taille" ngModel [(ngModel)]="joueur.taille">
+    </div>
+
+    <div class="form-group">
+      <label for="poids">Weight</label>
+      <input type="text" class="form-control" id="poids"  name="poids" ngModel [(ngModel)]="joueur.poids">
+    </div>
+
+    <div class="form-group">
+      <label for="valeur">Player value</label>
+      <input type="text" class="form-control" id="valeur"  name="valeur" ngModel [(ngModel)]="joueur.valeur">
+    </div>
+
+    <div class="form-group">
+      <label for="nummaillot">Jersy</label>
+      <input type="text" class="form-control" id="nummaillot"  name="nummaillot" ngModel [(ngModel)]="joueur.nummaillot">
+    </div>
+
+    <div class="form-group">
+      <label for="nummaillot">Position</label>
+      <select class="form-control" name="poste" ngModel [(ngModel)]="joueur.poste">
+        <option *ngFor="let post of posts" [value]="post"> {{post}}</option>
+
+      </select>
+    </div>
+
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  <input type="submit" value="save" class="btn btn-primary" form="addStock" (click)="sendDataToParent(f.value)">
+</div>
