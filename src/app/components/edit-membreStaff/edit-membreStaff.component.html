@@ -1,0 +1,26 @@
+
+<div class="modal-body">
+  <form #f="ngForm" id="addStock">
+
+    <div class="form-group">
+      <label for="nom">Staff member first name</label>
+      <input type="text" class="form-control" id="nom"  name="nom" ngModel [(ngModel)]="membreStaff.nom">
+    </div>
+    <div class="form-group">
+      <label for="prenom">Staff member last name</label>
+      <input type="text" class="form-control" id="prenom"  name="prenom" ngModel [(ngModel)]="membreStaff.prenom">
+    </div>
+
+    <div class="form-group">
+      <label for="categorie">Staff member category</label>
+      <select class="form-control" id="categorie" name="categorie" ngModel [(ngModel)]="membreStaff.categorie">
+        <option *ngFor="let categorie of categories" [value]="categorie"> {{categorie}}</option>
+      </select>
+    </div>
+
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+  <input type="submit" value="save" class="btn btn-primary" form="addStock" (click)="sendDataToParent(f.value)">
+</div>

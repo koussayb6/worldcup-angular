@@ -44,8 +44,8 @@
     </div>
 
     <div class="form-group">
-      <label for="nummaillot">Position</label>
-      <select class="form-control" name="poste" ngModel [(ngModel)]="joueur.poste">
+      <label for="poste">Position</label>
+      <select class="form-control" id="poste" name="poste" ngModel [(ngModel)]="joueur.poste">
         <option *ngFor="let post of posts" [value]="post"> {{post}}</option>
 
       </select>

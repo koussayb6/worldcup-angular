@@ -5,6 +5,7 @@ import {EquipeService} from "../../services/equipe.service";
 import {TokenStorageService} from "../../services/token-storage.service";
 import {Joueur} from "../../models/Joueur";
 import {JoueurService} from "../../services/joueur.service";
+import {MembreStaffService} from "../../services/membreStaff.service";
 
 
 @Component({
@@ -19,7 +20,7 @@ export class EquipeComponent implements OnInit {
 
 
 
-  constructor(private router:ActivatedRoute, private equipeService:EquipeService,private joueurService:JoueurService, private tokenStorage: TokenStorageService) { }
+  constructor(private router:ActivatedRoute, private membreStaffService:MembreStaffService, private equipeService:EquipeService, private joueurService:JoueurService, private tokenStorage: TokenStorageService) { }
 
   ngOnInit(): void {
     this.router.paramMap.subscribe(params => {
@@ -51,6 +52,20 @@ export class EquipeComponent implements OnInit {
 
   }
 
+  addMembreStaff(membreStaff:any){
+    let close=document.getElementById("closing");
+    close?.click();
+    this.membreStaffService.addMembreStaff(membreStaff,this.idEquipe).subscribe((resultat)=>{
+        console.log(resultat);
+        this.equipe.membresStaff.unshift(resultat.object);
+      },
+      (error)=>{
+        console.log(error.status)
+      }
+    );
+
+  }
 
 
 }
+

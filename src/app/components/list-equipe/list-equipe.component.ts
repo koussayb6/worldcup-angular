@@ -32,10 +32,15 @@ export class ListEquipeComponent implements OnInit {
 
 
 
-  addEquipe(equipe:any){
+  addEquipe(event:any){
     let close=document.getElementById("close");
     close?.click();
-    this.equipeService.addEquipe(equipe).subscribe((resultat)=>{
+    let data= new FormData();
+
+    data.append('e', JSON.stringify(event[0]));
+    data.append('file1', event[1]);
+    data.append('file2', event[2]);
+    this.equipeService.addEquipe(data).subscribe((resultat)=>{
         console.log(resultat);
         this.equipes.unshift(resultat.object);
 
@@ -53,7 +58,7 @@ export class ListEquipeComponent implements OnInit {
     var result=confirm("Do you really want to delete this team ?");
     if(result){
       //this.invoices.splice(index);
-      this.equipeService.deleteEquipek(equipeId).subscribe(
+      this.equipeService.deleteEquipe(equipeId).subscribe(
         () => this.equipes = this.equipes.filter(e => e.equipeid != equipeId),
       );}
   }
@@ -65,11 +70,16 @@ export class ListEquipeComponent implements OnInit {
     this.index=i;
   }
 
-  updateEquipe(equipe:any){
+  updateEquipe(event:any){
     let close=document.getElementById("close");
     close?.click();
-    equipe.equipeid=this.equipe.equipeid;
-    this.equipeService.updateEquipe(equipe).subscribe((result)=>
+    event[0].equipeid=this.equipe.equipeid;
+    let data= new FormData();
+
+    data.append('e', JSON.stringify(event[0]));
+    data.append('file1', event[1]);
+    data.append('file2', event[2]);
+    this.equipeService.updateEquipe(data).subscribe((result)=>
     { this.equipes[this.index]=result.object;
 
     });

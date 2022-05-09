@@ -45,18 +45,7 @@
                                                         </form>
                                                     </div>
                                                 </span>
-                    <span class="menu-cart-area mini-cart-active">
-                                                    <a href="#">
-                                                        <i class="fa fa-shopping-cart"></i>
-                                                        <span class="icon-num">0</span>
-                                                    </a>
-                      <!-- woocommerce-mini -->
-                                                    <div class="woocommerce-mini-cart text-left">
-                                                        <div class="cart-bottom-part">
-                                                            <h2 class="widget-title">No products in the cart.</h2>
-                                                        </div>
-                                                    </div>
-                                                </span>
+
                     <span>
                                                     <a id="nav-expander" class="nav-expander">
                                                         <ul class="offcanvas-icon">
@@ -71,89 +60,36 @@
                   </div>
                   <ul class="nav-menu text-right">
                     <!-- Home -->
-                    <li class="menu-item-has-children"><a href="#" class="home">Home</a>
-                      <ul class="sub-menu">
-                        <li><a href="index-2.html">Home 1</a></li>
-                        <li><a href="index2.html">Home 2</a></li>
-                        <li><a href="index3.html">Home 3</a></li>
-                        <li><a href="index4.html">Home 4</a></li>
-                        <li><a href="index5.html">Home 5</a></li>
-                        <li><a href="index6.html">Home 6</a></li>
-                      </ul>
+                    <li class="menu-item-has-children"><a [routerLink]="['/home']" class="home">Home</a>
+
                     </li>
                     <!-- End Home -->
 
                     <!-- Club Directory Menu Start -->
-                    <li class="rs-mega-menu mega-rs menu-item-has-children"><a href="#">Club Directory</a>
-                      <ul class="mega-menu">
-                        <li class="mega-menu-container">
-                          <div class="mega-menu-innner">
-                            <div class="single-megamenu">
-                              <ul class="sub-menu">
-                                <li class="menu-title">English League</li>
-                                <li><a href="single-club.html">Arsenal</a></li>
-                                <li><a href="single-club.html">Chelsea</a></li>
-                                <li><a href="single-club.html">Liverpool</a></li>
-                                <li><a href="single-club.html">Man City</a></li>
-                                <li><a href="single-club.html">Manchester Unt</a></li>
-                              </ul>
-                            </div>
-                            <div class="single-megamenu">
-                              <ul class="sub-menu md-pt-0">
-                                <li class="menu-title">La Liga</li>
-                                <li><a href="single-club.html">Atletico Madrid</a></li>
-                                <li><a href="single-club.html">Bercelona</a></li>
-                                <li><a href="single-club.html">Real Madrid</a></li>
-                                <li><a href="single-club.html">Valencia</a></li>
-                                <li><a href="single-club.html">Real Sociedad</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </li>
-                      </ul> <!-- //.mega-menu -->
+                    <li class="rs-mega-menu mega-rs menu-item-has-children"><a [routerLink]="['/home']" >Teams</a>
                     </li>
                     <!--Club Directory Menu End -->
 
 
-                    <!-- Pages Menu Start -->
-                    <li class="current-menu-item current_page_item menu-item-has-children"><a href="#">Pages</a>
+                    <!-- Players Menu Start -->
+                    <li class="current-menu-item current_page_item menu-item-has-children"><a [routerLink]="['/home']" >Players</a>
+
+                    </li>
+                    <!-- Players Menu End -->
+
+                    <!-- Profile Menu Start -->
+                    <li *ngIf="isLoggedIn" class="current-menu-item current_page_item menu-item-has-children"><a routerLink="profile">My account</a>
                       <ul class="sub-menu">
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="board-management.html">Board Management</a></li>
-                        <li><a href="sponsors.html">Sponsors</a></li>
-                        <li><a href="match-fixtures.html">Match Fixtures</a></li>
-                        <li class="active"><a href="first-team.html">First Team</a></li>
-                        <li><a href="club-ranking.html">Club Ranking</a></li>
-                        <li class="menu-item-has-children"><a href="#">Team</a>
-                          <ul class="sub-menu">
-                            <li><a href="team.html">Team 1</a></li>
-                            <li><a href="team2.html">Team 2</a></li>
-                            <li><a href="team3.html">Team 3</a></li>
-                            <li><a href="team4.html">Team 4</a></li>
-                            <li><a href="team5.html">Team 5</a></li>
-                            <li class="last-item"><a href="team-single.html">Team Single</a></li>
-                          </ul>
-                        </li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="shop.html">Shop</a></li>
-                        <li><a href="cart.html">Cart</a></li>
-                        <li><a href="checkout.html">Checkout</a></li>
-                        <li class="last-item"><a href="my-account.html">My account</a></li>
+
+                        <li>  <a href (click)="logout()">LogOut</a> <li>
+
                       </ul>
                     </li>
-                    <!-- Pages Menu End -->
-
-                    <!-- Profile -->
-                    <li *ngIf="isLoggedIn">
-                      <a class="nav-link" routerLink="profile">{{ username }}</a>
-                    </li>
-                    <li *ngIf="isLoggedIn">
-                      <a href (click)="logout()">LogOut</a>
-                    </li>
+                    <!-- Profile Menu End -->
                     <li *ngIf="!isLoggedIn">
                       <a routerLink="login">Login</a>
                     </li>
-                    <!-- Profile -->
+
 
                     <!--Contact Menu Start-->
                     <li class="last-item"><a href="contact.html">Contact</a></li>
@@ -209,8 +145,9 @@
 <!--Full width header End-->
 
 
-
 <router-outlet></router-outlet>
+
+
 <!-- Footer Start -->
 <footer id="rs-footer" class="rs-footer pt-137 md-pt-70 sm-pt-65">
   <!-- Sponsor Logo Section Start -->

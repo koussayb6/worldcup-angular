@@ -14,6 +14,8 @@ import { EditTeamComponent } from './components/edit-team/edit-team.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { EditJoueurComponent } from './components/edit-joueur/edit-joueur.component';
 import { JoueurComponent } from './components/joueur/joueur.component';
+import { MembreStaffComponent } from './components/membreStaff/membreStaff.component';
+import { EditMembreStaffComponent } from './components/edit-membreStaff/edit-membreStaff.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { JoueurComponent } from './components/joueur/joueur.component';
     ProfileComponent,
     EditJoueurComponent,
     JoueurComponent,
+    MembreStaffComponent,
+    EditMembreStaffComponent
   ],
   imports: [
     BrowserModule,

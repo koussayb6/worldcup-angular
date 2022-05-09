@@ -27,7 +27,7 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      
+
       <app-edit-team *ngIf="showEdit; else elseblock" [equipe]="equipe" (notif)="updateEquipe($event)"></app-edit-team>
       <ng-template #elseblock>
         <app-edit-team  (notif)="addEquipe($event)"></app-edit-team>
@@ -45,7 +45,9 @@
       <tr>
         <th class="team">Team</th>
         <th>Surname</th>
-        <th>Global ranking</th>
+        <th>Confederation</th>
+        <th>Couleurs</th>
+        <th>Stade principal</th>
         <th *ngIf="loggedIn">Actions</th>
       </tr>
       <tr *ngFor="let equipe of equipes; let i=index">
@@ -58,7 +60,9 @@
           </div>
         </td>
         <td>{{equipe.surnom}}</td>
-        <td>{{equipe.classementmondial}}</td>
+        <td>{{equipe.confederation}}</td>
+        <td>{{equipe.couleurs}}</td>
+        <td>{{equipe.stadeprincipal}}</td>
         <td *ngIf="loggedIn">    <button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" (click)="update(equipe,i)"><i class="fa fa-edit"></i></button>
         <button (click)="delete(equipe.equipeid)" class="btn btn-danger m-2" ><i class="fa fa-trash"></i></button>
         </td>

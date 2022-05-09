@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Equipe} from "../../models/Equipe";
 import {Joueur} from "../../models/Joueur";
 import {ActivatedRoute, Router} from "@angular/router";
 import {JoueurService} from "../../services/joueur.service";
@@ -15,7 +14,7 @@ export class JoueurComponent implements OnInit {
   idEquipe:any;
   joueur:Joueur;
   loggedIn=false;
-  joueurs:Joueur[];
+
 
   constructor(private router:Router,private route:ActivatedRoute, private joueurService:JoueurService, private tokenStorage: TokenStorageService ) { }
 
@@ -50,7 +49,7 @@ export class JoueurComponent implements OnInit {
   delete(joueurid:any){
     var result=confirm("Do you really want to delete this player ?");
     if(result){
-      this.joueurService.deleteJoueurk(joueurid).subscribe();
+      this.joueurService.deleteJoueur(joueurid).subscribe();
     this.router.navigate(["equipe/"+this.idEquipe]);}
   }
 

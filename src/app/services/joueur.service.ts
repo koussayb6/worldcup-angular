@@ -27,7 +27,7 @@ export class JoueurService {
     })
 
   }
-  deleteJoueurk(id:any):Observable<Joueur>{
+  deleteJoueur(id:any):Observable<Joueur>{
     return this.http.delete<Joueur>(this.baseurl+id)
   }
 

@@ -20,14 +20,10 @@ export class EquipeService {
     return this.http.get<Equipe>(this.baseurl+id);
   }
   addEquipe(equipe:any):Observable<any>{
-    return this.http.post<any>(this.baseurl, equipe, {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json'
-      })
-    })
+    return this.http.post<any>(this.baseurl, equipe)
 
   }
-  deleteEquipek( id:any):Observable<Equipe>{
+  deleteEquipe( id:any):Observable<Equipe>{
     return this.http.delete<Equipe>(this.baseurl+id)
   }
 

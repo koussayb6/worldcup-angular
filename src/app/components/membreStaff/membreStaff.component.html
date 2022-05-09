@@ -1,0 +1,271 @@
+<!-- Breadcrumbs Section Start -->
+<div class="rs-breadcrumbs">
+  <div class="breadcrumbs-wrap">
+    <img src="./assets/images/breadcrumbs/inner11.jpg" alt="Breadcrumbs Image">
+    <div class="breadcrumbs-inner vertical-middle">
+      <div class="container">
+        <div class="breadcrumbs-text">
+          <h1 class="breadcrumbs-title margin-0">{{membreStaff.nom}}</h1>
+          <div *ngIf="loggedIn">
+            <button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal" > <i class="fa fa-edit"></i> Edit</button>
+            <button (click)="delete(membreStaff.membrestaffid)" class="btn btn-danger m-2" ><i class="fa fa-trash"></i> Delete</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Breadcrumbs Section End -->
+
+<!-- Single Club Section Start -->
+<div class="rs-single-team sec-bg pt-100 md-pt-80 md-pb-80">
+  <div class="container">
+    <div class="row pb-100 md-pb-80">
+      <div class="col-lg-4 md-mb-50">
+        <div class="player-image">
+          <img src="assets/images/team/youssef-msekni.jpg" alt="">
+          <div class="name-box">
+            <h3 class="player-name">{{membreStaff.prenom}} {{membreStaff.nom}}</h3>
+
+            <ul class="social-icon">
+              <li>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+              </li>
+            </ul>
+
+          </div>
+
+
+
+
+        </div>
+      </div>
+      <div class="col-lg-8 pl-35 md-pl-15">
+        <div class="player-detail mb-50">
+          <h3 class="title">Player Profile</h3>
+          <table>
+            <tbody>
+
+            <tr>
+              <td>Category</td>
+              <td>{{membreStaff.categorie}} </td>
+            </tr>
+            <tr>
+              <td>Function</td>
+              <td>{{membreStaff.fonction.libelle}}</td>
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+
+        <div class="player-detail">
+          <h3 class="title">Career Information</h3>
+          <table>
+            <tbody>
+            <tr>
+              <td>Recorded Matches</td>
+              <td>65 matches</td>
+            </tr>
+            <tr>
+              <td>Pictures Taken</td>
+              <td>30 pictures</td>
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="rs-tab pb-100 md-pb-80">
+      <div class="single-team-data">
+        <ul class="nav nav-pills">
+          <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#team-overview">Staff Member Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#player-gallery">Staff Member Gallery</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#player-videos">Staff Member Videos</a>
+          </li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="team-overview">
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, colores eos qui ratione voluptatem sequi nesciunt.</p>
+             </div>
+          <div class="tab-pane fade" id="player-gallery">
+            <div class="team-gallery">
+              <div class="row">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-30">
+                  <div class="gallery-wrap">
+                    <img src="images/gallery/tab/1.jpg" alt="">
+                    <a class="image-popup" href="images/gallery/tab/1.jpg">
+                      <i class="flaticon-add-circular-button"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-30">
+                  <div class="gallery-wrap">
+                    <img src="images/gallery/tab/2.jpg" alt="">
+                    <a class="image-popup" href="images/gallery/tab/2.jpg">
+                      <i class="flaticon-add-circular-button"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-30">
+                  <div class="gallery-wrap">
+                    <img src="images/gallery/tab/3.jpg" alt="">
+                    <a class="image-popup" href="images/gallery/tab/3.jpg">
+                      <i class="flaticon-add-circular-button"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 mb-30">
+                  <div class="gallery-wrap">
+                    <img src="images/gallery/tab/4.jpg" alt="">
+                    <a class="image-popup" href="images/gallery/tab/4.jpg">
+                      <i class="flaticon-add-circular-button"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 lg-mb-30">
+                  <div class="gallery-wrap">
+                    <img src="images/gallery/tab/5.jpg" alt="">
+                    <a class="image-popup" href="images/gallery/tab/5.jpg">
+                      <i class="flaticon-add-circular-button"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 lg-mb-30">
+                  <div class="gallery-wrap">
+                    <img src="images/gallery/tab/6.jpg" alt="">
+                    <a class="image-popup" href="images/gallery/tab/6.jpg">
+                      <i class="flaticon-add-circular-button"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12 sm-mb-30">
+                  <div class="gallery-wrap">
+                    <img src="images/gallery/tab/7.jpg" alt="">
+                    <a class="image-popup" href="images/gallery/tab/7.jpg">
+                      <i class="flaticon-add-circular-button"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                  <div class="gallery-wrap">
+                    <img src="images/gallery/tab/8.jpg" alt="">
+                    <a class="image-popup" href="images/gallery/tab/8.jpg">
+                      <i class="flaticon-add-circular-button"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane fade" id="player-videos">
+            <div class="club-videos">
+              <div class="row">
+                <div class="col-lg-4 col-md-6 mb-30">
+                  <div class="video-wrap">
+                    <a class="popup-videos" href="https://www.youtube.com/watch?v=pH_G1f6KzfI">
+                      <img src="images/video-thumb/1.jpg" alt="">
+                      <i class="fa fa-play"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-30">
+                  <div class="video-wrap">
+                    <a class="popup-videos" href="https://www.youtube.com/watch?v=1vNmYNH8d4I">
+                      <img src="images/video-thumb/2.jpg" alt="">
+                      <i class="fa fa-play"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-30">
+                  <div class="video-wrap">
+                    <a class="popup-videos" href="https://www.youtube.com/watch?v=jvrayw6wANg">
+                      <img src="images/video-thumb/3.jpg" alt="">
+                      <i class="fa fa-play"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-md-6 md-mb-30">
+                  <div class="video-wrap">
+                    <a class="popup-videos" href="https://www.youtube.com/watch?v=1vNmYNH8d4I">
+                      <img src="images/video-thumb/2.jpg" alt="">
+                      <i class="fa fa-play"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6 sm-mb-30">
+                  <div class="video-wrap">
+                    <a class="popup-videos" href="https://www.youtube.com/watch?v=jvrayw6wANg">
+                      <img src="images/video-thumb/3.jpg" alt="">
+                      <i class="fa fa-play"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                  <div class="video-wrap">
+                    <a class="popup-videos" href="https://www.youtube.com/watch?v=pH_G1f6KzfI">
+                      <img src="images/video-thumb/1.jpg" alt="">
+                      <i class="fa fa-play"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Subscribe Section Start -->
+    <div class="rs-subscribe bg7 md-margin-0">
+      <form class="subscribe-form">
+        <div class="row rs-vertical-middle">
+          <div class="col-lg-6 col-md-12 md-mb-30">
+            <div class="title-part">
+              <h2 class="title white-color"> Subscribe Our Newsletter</h2>
+              <p class="desc margin-0 white-color"> Subscribe to our newsletter for getting regular updates.</p>
+            </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <div class="subscribe-form-fields">
+              <input type="submit" class="news-submit" value="Subscribe">
+              <input type="email" class="news-email" name="EMAIL" placeholder="EMAIL ADDRESS" required="">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <!-- Subscribe Section End -->
+  </div>
+</div>
+<!-- Single Club Section End -->
+<!--updatejoueurform-->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update player</h5>
+        <button type="button" id="close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <app-edit-membreStaff [membreStaff]="membreStaff" (notif)="updateMembreStaff($event)"></app-edit-membreStaff>
+
+    </div>
+  </div>
+</div>
+<!--updatejoueurform-->
